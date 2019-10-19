@@ -1,0 +1,30 @@
+type Query {
+  legislationById(id: ID): Legislation
+  documentById(id: ID): Document
+  allLegislations: [Legislation]
+  allDocuments: [Document]
+}
+
+type Legislation {
+  id: ID
+  document: Document
+  sgmlHref: String
+  orderSeqNo: Int
+  sgmlNodeText: String
+  chunkId: Int
+  chunk: Boolean
+  loaded: Boolean
+}
+
+type Document {
+  id: ID
+  dtCode: String
+  loaded: Boolean
+  yearId: Int
+  title: String
+  mangleTitle: String
+  shortTitle: String
+  number: String
+  euSubtype: Int
+  legislations: [Legislation]
+}
